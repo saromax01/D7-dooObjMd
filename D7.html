@@ -35,7 +35,7 @@
 
   <body>
     <div>
-      <h1 onclick="makeItClickable(this)">Questo è il titolo della pagina</h1>
+      <h1>Questo è il titolo della pagina</h1>
       <h2>Questo è il sottotitolo della pagina</h2>
     </div>
 
@@ -179,14 +179,11 @@
 
           Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
         */
-
-      const makeItClickable = function (elemento) {
-        let testoH1 = document.querySelector("h1");
-        testoH1 = testoH1.textContent;
-        testoH1 = testoH1.slice(0, -1);
-        //elemento.textContent = testoH1;
+      let h1 = document.querySelector("h1");
+      const makeItClickable = function () {
+        h1.innerText = h1.innerText.slice(0, -1);
       };
-      makeItClickable();
+      h1.onclick = makeItClickable;
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
@@ -210,16 +207,22 @@
         if (tableArea) {
           const table = document.createElement("table");
           table.style.width = "100%";
-          table.style.borderCollapse = "collapse";
+          table.style.borderCollapse = "separate";
           const thead = document.createElement("thead");
           const tbody = document.createElement("tbody");
           const headerRow = document.createElement("tr");
-          headerRow.innerHTML = `
-            <th>Immagine</th>
-            <th>Nome Prodotto</th>
-            <th>Quantità</th>
-            <th>Prezzo</th>
-          `;
+          const th1 = document.createElement("th");
+          th1.innerText = "immagine";
+          const th2 = document.createElement("th");
+          th2.innerText = "nome prodotto";
+          const th3 = document.createElement("th");
+          th3.innerText = "quantità";
+          const th4 = document.createElement("th");
+          th4.innerText = "prezzo";
+          headerRow.appendChild(th1);
+          headerRow.appendChild(th2);
+          headerRow.appendChild(th3);
+          headerRow.appendChild(th4);
           thead.appendChild(headerRow);
           table.appendChild(thead);
 
@@ -252,7 +255,7 @@
       */
 
       const addRow = function (immagine, nomeProdotto, quantita, prezzo) {
-        newRightable = document.querySelector(#tableArea)
+        //newRightable = document.querySelector(#tableArea)
       };
 
       /* ESERCIZIO 14
